@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/list_graph"
+    app:startDestination="@id/listFragment2">
+
+    <fragment
+        android:id="@+id/listFragment2"
+        android:name="com.example.dynamiclist.ListFragment"
+        android:label="ListFragment"
+        tools:layout="@layout/list_fragment"
+        />
+</navigation>
