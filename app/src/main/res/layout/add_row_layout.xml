@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <EditText
+        android:id="@+id/itemName"
+        android:layout_width="200dp"
+        android:layout_height="45dp"
+        android:layout_marginHorizontal="8dp"
+        android:layout_marginVertical="8dp"
+        android:background="@drawable/custom_background"
+        android:gravity="center_vertical"
+        android:hint="Name"
+        android:paddingStart="10dp"
+        android:textColor="@color/black"
+        android:textSize="15sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatSpinner
+        android:id="@+id/spinner"
+        android:layout_width="120dp"
+        android:layout_height="45dp"
+        android:layout_marginHorizontal="8dp"
+        android:background="@drawable/custom_background"
+        app:layout_constraintBottom_toBottomOf="@id/itemName"
+        app:layout_constraintStart_toEndOf="@id/itemName"
+        app:layout_constraintTop_toTopOf="@id/itemName" />
+
+    <ImageView
+        android:id="@+id/remove"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:src="@drawable/close"
+        app:layout_constraintBottom_toBottomOf="@id/itemName"
+        app:layout_constraintStart_toEndOf="@id/spinner"
+        app:layout_constraintTop_toTopOf="@id/itemName"
+
+        />
+</androidx.constraintlayout.widget.ConstraintLayout>
