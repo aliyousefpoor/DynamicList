@@ -40,5 +40,20 @@
         app:layout_constraintStart_toStartOf="@id/ItemTextView"
         app:layout_constraintTop_toBottomOf="@id/listLayout" />
 
+    <Button
+        android:id="@+id/submitListButton"
+        android:layout_width="130dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/button_background"
+        android:gravity="center"
+        android:paddingEnd="8dp"
+        android:text="Show Item"
+        android:textColor="@color/white"
+        android:textSize="15sp"
+        android:layout_marginStart="20dp"
+        app:layout_constraintStart_toEndOf="@id/addItem"
+        app:layout_constraintTop_toBottomOf="@id/listLayout" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

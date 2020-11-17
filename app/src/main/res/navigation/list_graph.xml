@@ -7,8 +7,18 @@
 
     <fragment
         android:id="@+id/listFragment2"
-        android:name="com.example.dynamiclist.ListFragment"
+        android:name="com.example.dynamiclist.list.ListFragment"
         android:label="ListFragment"
         tools:layout="@layout/list_fragment"
+        >
+        <action
+            android:id="@+id/action_listFragment2_to_subListFragment"
+            app:destination="@id/subListFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/subListFragment"
+        android:name="com.example.dynamiclist.list.SubListFragment"
+        android:label="SubListFragment"
+        tools:layout="@layout/sub_list_fragment"
         />
 </navigation>
