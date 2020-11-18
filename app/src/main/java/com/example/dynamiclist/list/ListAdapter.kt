@@ -23,16 +23,16 @@ class ListAdapter(private var context: Context, private var itemList: ArrayList<
 
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
         val listViewHolder: ListViewHolder = holder as ListViewHolder
-        listViewHolder.onBind(itemList)
+        listViewHolder.onBind(itemList[position])
     }
 
     class ListViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val name: TextView = itemView.findViewById(R.id.name)
         val team: TextView = itemView.findViewById(R.id.team)
 
-        fun onBind(itemModel: ArrayList<ItemModel>) {
-            name.text = itemModel[position].itemName
-            team.text = itemModel[position].itemTeam
+        fun onBind(itemModel: ItemModel) {
+            name.text = itemModel.itemName
+            team.text = itemModel.itemTeam
         }
     }
 }

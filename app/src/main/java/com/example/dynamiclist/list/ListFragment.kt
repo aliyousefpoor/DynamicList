@@ -1,12 +1,12 @@
 package com.example.dynamiclist.list
 
-import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.*
 import androidx.appcompat.widget.AppCompatSpinner
+import androidx.core.widget.NestedScrollView
 import androidx.fragment.app.Fragment
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
@@ -17,6 +17,7 @@ class ListFragment : Fragment() {
     private lateinit var navController: NavController
     private lateinit var addButton: Button
     private lateinit var submitList: Button
+    private lateinit var scrollView: NestedScrollView
     private lateinit var listLayout: LinearLayout
     private lateinit var nameEditText: EditText
     private lateinit var spinner: AppCompatSpinner
@@ -38,7 +39,9 @@ class ListFragment : Fragment() {
         submitList = view.findViewById(R.id.submitListButton)
         listLayout = view.findViewById(R.id.listLayout)
         navController = Navigation.findNavController(view)
-        fillList()
+        scrollView = view.findViewById(R.id.scrollView)
+        fillSpinnerItem()
+
         addButton.setOnClickListener {
             addView()
         }
@@ -85,8 +88,7 @@ class ListFragment : Fragment() {
             if (nameEditText.text.isNotEmpty() && spinner.selectedItemPosition != 0) {
                 itemModel = ItemModel(
                     nameEditText.text.toString(),
-                    teamList.get(spinner.selectedItemPosition)
-                )
+                    teamList[spinner.selectedItemPosition])
             } else {
                 result = false
                 break
@@ -107,7 +109,7 @@ class ListFragment : Fragment() {
         return result
     }
 
-    private fun fillList() {
+    private fun fillSpinnerItem() {
         teamList = ArrayList()
         teamList.add("Choose")
         teamList.add("Iran")
